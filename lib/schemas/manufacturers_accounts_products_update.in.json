@@ -1,0 +1,382 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "parent": {
+            "required": true,
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Attributes of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116.",
+            "properties": {
+                "additionalImageLink": {
+                    "description": "The additional images of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#addlimage.",
+                    "items": {
+                        "description": "An image.",
+                        "properties": {
+                            "imageUrl": {
+                                "description": "The URL of the image. For crawled images, this is the provided URL. For\nuploaded images, this is a serving URL from Google if the image has been\nprocessed successfully.",
+                                "type": "string"
+                            },
+                            "status": {
+                                "description": "The status of the image.\n@OutputOnly",
+                                "enum": [
+                                    "STATUS_UNSPECIFIED",
+                                    "PENDING_PROCESSING",
+                                    "PENDING_CRAWL",
+                                    "OK",
+                                    "ROBOTED",
+                                    "XROBOTED",
+                                    "CRAWL_ERROR",
+                                    "PROCESSING_ERROR",
+                                    "DECODING_ERROR",
+                                    "TOO_BIG",
+                                    "CRAWL_SKIPPED",
+                                    "HOSTLOADED",
+                                    "HTTP_404"
+                                ],
+                                "type": "string"
+                            },
+                            "type": {
+                                "description": "The type of the image, i.e., crawled or uploaded.\n@OutputOnly",
+                                "enum": [
+                                    "TYPE_UNSPECIFIED",
+                                    "CRAWLED",
+                                    "UPLOADED"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ageGroup": {
+                    "description": "The target age group of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#agegroup.",
+                    "type": "string"
+                },
+                "brand": {
+                    "description": "The brand name of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#brand.",
+                    "type": "string"
+                },
+                "capacity": {
+                    "description": "The capacity of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#capacity.",
+                    "properties": {
+                        "unit": {
+                            "description": "The unit of the capacity, i.e., MB, GB, or TB.",
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The numeric value of the capacity.",
+                            "format": "int64",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "color": {
+                    "description": "The color of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#color.",
+                    "type": "string"
+                },
+                "count": {
+                    "description": "The count of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#count.",
+                    "properties": {
+                        "unit": {
+                            "description": "The unit in which these products are counted.",
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The numeric value of the number of products in a package.",
+                            "format": "int64",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "description": {
+                    "description": "The description of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#description.",
+                    "type": "string"
+                },
+                "disclosureDate": {
+                    "description": "The disclosure date of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#disclosure.",
+                    "type": "string"
+                },
+                "excludedDestination": {
+                    "description": "A list of excluded destinations.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "featureDescription": {
+                    "description": "The rich format description of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#featuredesc.",
+                    "items": {
+                        "description": "A feature description of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#featuredesc.",
+                        "properties": {
+                            "headline": {
+                                "description": "A short description of the feature.",
+                                "type": "string"
+                            },
+                            "image": {
+                                "description": "An optional image describing the feature.",
+                                "properties": {
+                                    "imageUrl": {
+                                        "description": "The URL of the image. For crawled images, this is the provided URL. For\nuploaded images, this is a serving URL from Google if the image has been\nprocessed successfully.",
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "description": "The status of the image.\n@OutputOnly",
+                                        "enum": [
+                                            "STATUS_UNSPECIFIED",
+                                            "PENDING_PROCESSING",
+                                            "PENDING_CRAWL",
+                                            "OK",
+                                            "ROBOTED",
+                                            "XROBOTED",
+                                            "CRAWL_ERROR",
+                                            "PROCESSING_ERROR",
+                                            "DECODING_ERROR",
+                                            "TOO_BIG",
+                                            "CRAWL_SKIPPED",
+                                            "HOSTLOADED",
+                                            "HTTP_404"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "description": "The type of the image, i.e., crawled or uploaded.\n@OutputOnly",
+                                        "enum": [
+                                            "TYPE_UNSPECIFIED",
+                                            "CRAWLED",
+                                            "UPLOADED"
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "text": {
+                                "description": "A detailed description of the feature.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "flavor": {
+                    "description": "The flavor of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#flavor.",
+                    "type": "string"
+                },
+                "format": {
+                    "description": "The format of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#format.",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "The target gender of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#gender.",
+                    "type": "string"
+                },
+                "gtin": {
+                    "description": "The Global Trade Item Number (GTIN) of the product. For more information,\nsee https://support.google.com/manufacturers/answer/6124116#gtin.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "imageLink": {
+                    "description": "The image of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#image.",
+                    "properties": {
+                        "imageUrl": {
+                            "description": "The URL of the image. For crawled images, this is the provided URL. For\nuploaded images, this is a serving URL from Google if the image has been\nprocessed successfully.",
+                            "type": "string"
+                        },
+                        "status": {
+                            "description": "The status of the image.\n@OutputOnly",
+                            "enum": [
+                                "STATUS_UNSPECIFIED",
+                                "PENDING_PROCESSING",
+                                "PENDING_CRAWL",
+                                "OK",
+                                "ROBOTED",
+                                "XROBOTED",
+                                "CRAWL_ERROR",
+                                "PROCESSING_ERROR",
+                                "DECODING_ERROR",
+                                "TOO_BIG",
+                                "CRAWL_SKIPPED",
+                                "HOSTLOADED",
+                                "HTTP_404"
+                            ],
+                            "type": "string"
+                        },
+                        "type": {
+                            "description": "The type of the image, i.e., crawled or uploaded.\n@OutputOnly",
+                            "enum": [
+                                "TYPE_UNSPECIFIED",
+                                "CRAWLED",
+                                "UPLOADED"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "includedDestination": {
+                    "description": "A list of included destinations.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "itemGroupId": {
+                    "description": "The item group id of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#itemgroupid.",
+                    "type": "string"
+                },
+                "material": {
+                    "description": "The material of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#material.",
+                    "type": "string"
+                },
+                "mpn": {
+                    "description": "The Manufacturer Part Number (MPN) of the product. For more information,\nsee https://support.google.com/manufacturers/answer/6124116#mpn.",
+                    "type": "string"
+                },
+                "pattern": {
+                    "description": "The pattern of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#pattern.",
+                    "type": "string"
+                },
+                "productDetail": {
+                    "description": "The details of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#productdetail.",
+                    "items": {
+                        "description": "A product detail of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#productdetail.",
+                        "properties": {
+                            "attributeName": {
+                                "description": "The name of the attribute.",
+                                "type": "string"
+                            },
+                            "attributeValue": {
+                                "description": "The value of the attribute.",
+                                "type": "string"
+                            },
+                            "sectionName": {
+                                "description": "A short section name that can be reused between multiple product details.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "productLine": {
+                    "description": "The name of the group of products related to the product. For more\ninformation, see\nhttps://support.google.com/manufacturers/answer/6124116#productline.",
+                    "type": "string"
+                },
+                "productName": {
+                    "description": "The canonical name of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#productname.",
+                    "type": "string"
+                },
+                "productPageUrl": {
+                    "description": "The URL of the detail page of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#productpage.",
+                    "type": "string"
+                },
+                "productType": {
+                    "description": "The type or category of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#producttype.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "releaseDate": {
+                    "description": "The release date of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#release.",
+                    "type": "string"
+                },
+                "scent": {
+                    "description": "The scent of the product. For more information, see\n https://support.google.com/manufacturers/answer/6124116#scent.",
+                    "type": "string"
+                },
+                "size": {
+                    "description": "The size of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#size.",
+                    "type": "string"
+                },
+                "sizeSystem": {
+                    "description": "The size system of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#sizesystem.",
+                    "type": "string"
+                },
+                "sizeType": {
+                    "description": "The size type of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#sizetype.",
+                    "type": "string"
+                },
+                "suggestedRetailPrice": {
+                    "description": "The suggested retail price (MSRP) of the product. For more information,\nsee https://support.google.com/manufacturers/answer/6124116#price.",
+                    "properties": {
+                        "amount": {
+                            "description": "The numeric value of the price.",
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "The currency in which the price is denoted.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "targetClientId": {
+                    "description": "The target client id. Should only be used in the accounts of the data\npartners.",
+                    "type": "string"
+                },
+                "theme": {
+                    "description": "The theme of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#theme.",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "The title of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#title.",
+                    "type": "string"
+                },
+                "videoLink": {
+                    "description": "The videos of the product. For more information, see\nhttps://support.google.com/manufacturers/answer/6124116#video.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
